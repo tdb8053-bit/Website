@@ -45,8 +45,8 @@ section{margin-top:52px}
 .trip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
 .trip{overflow:hidden;background:#fff;border:1px solid var(--line);border-radius:22px;box-shadow:0 10px 26px rgba(15,118,110,.075)}
 .trip-image{min-height:166px;background:linear-gradient(0deg,rgba(5,53,54,.48),rgba(5,53,54,0)),url("北海岸精選行程測試/images/漁人碼頭示意圖.webp") center/cover;filter:saturate(.88) hue-rotate(6deg) brightness(1.16) contrast(.94)}
-.trip-image.jiufen{background-image:linear-gradient(0deg,rgba(5,53,54,.56),rgba(5,53,54,0)),url("精選行程網站圖片/九份十分主視覺.webp")}
-.trip-image.yangmingshan{background-image:linear-gradient(0deg,rgba(5,53,54,.56),rgba(5,53,54,0)),url("精選行程網站圖片/陽明山主視覺.webp")}
+.trip-image.jiufen{background-image:linear-gradient(0deg,rgba(5,53,54,.56),rgba(5,53,54,0)),url("web-assets/jiufen-shifen-hero.webp")}
+.trip-image.yangmingshan{background-image:linear-gradient(0deg,rgba(5,53,54,.56),rgba(5,53,54,0)),url("web-assets/yangmingshan-hero.webp")}
 .trip-image.yilan{background-image:linear-gradient(0deg,rgba(5,53,54,.56),rgba(5,53,54,0)),url("web-assets/trip-image-02.webp")}
 .trip-image.tainan{background-image:linear-gradient(0deg,rgba(5,53,54,.56),rgba(5,53,54,0)),url("web-assets/trip-image-03.webp")}
 .trip-image.kaohsiung{background-image:linear-gradient(0deg,rgba(5,53,54,.56),rgba(5,53,54,0)),url("web-assets/trip-image-04.webp")}
@@ -553,7 +553,7 @@ section#trips{margin-top:68px;padding:0 30px}
 <div class="language-picker">
   <label for="language-select">語言</label>
   <select id="language-select" aria-label="選擇語言">
-    <option value="zh-Hant">繁中</option>
+    <option value="zh-Hant" selected>繁中</option>
     <option value="zh-Hans">简中</option>
     <option value="en">English</option>
   </select>
@@ -615,7 +615,7 @@ section#trips{margin-top:68px;padding:0 30px}
         <div class="region-title south">南部精選<small>府城文化、港灣與客庄風景</small>
 </div>
         <article class="trip north">
-<div class="trip-image jiufen"><img src="精選行程網站圖片/九份十分主視覺.webp" loading="lazy" decoding="async" alt="九份山城與十分風景">
+<div class="trip-image jiufen"><img src="web-assets/jiufen-shifen-hero.webp" loading="lazy" decoding="async" alt="九份山城與十分風景">
 </div>
 <div class="trip-body">
 <span class="tag">北部・一日遊</span>
@@ -628,7 +628,7 @@ section#trips{margin-top:68px;padding:0 30px}
 </div>
 </article>
         <article class="trip north">
-<div class="trip-image yangmingshan"><img src="精選行程網站圖片/陽明山主視覺.webp" loading="lazy" decoding="async" alt="陽明山自然景色">
+<div class="trip-image yangmingshan"><img src="web-assets/yangmingshan-hero.webp" loading="lazy" decoding="async" alt="陽明山自然景色">
 </div>
 <div class="trip-body">
 <span class="tag">北部・一日遊</span>
@@ -990,7 +990,8 @@ section#trips{margin-top:68px;padding:0 30px}
       renderTrips();
       translatePage(language);
     }
-    const savedLanguage=localStorage.getItem('homepage-language')||'zh-Hant';
+    const storedLanguage=localStorage.getItem('homepage-language');
+    const savedLanguage=languageText[storedLanguage]?storedLanguage:'zh-Hant';
     languageSelect.value=savedLanguage;
     languageSelect.addEventListener('change',()=>applyLanguage(languageSelect.value));
 
