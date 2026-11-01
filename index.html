@@ -483,7 +483,15 @@ section#trips{margin-top:68px;padding:0 30px}
       .hero p{font-size:.94rem}
       .hero-action{margin-top:15px}
     }
+    @media(max-width:700px){
+      html.line-inapp .brand small{font-size:10px!important}
+    }
   </style>
+  <script>
+    if (/(?:Line\/|LIFF)/i.test(navigator.userAgent)) {
+      document.documentElement.classList.add('line-inapp');
+    }
+  </script>
 </head>
 <body data-theme="taiwan">
   <main class="wrap">
