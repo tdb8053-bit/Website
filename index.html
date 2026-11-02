@@ -521,6 +521,7 @@ section#trips{margin-top:68px;padding:0 30px}
 <div class="eyebrow">TAIWAN PRIVATE TOUR</div>
 <h1>帶著喜歡的人，出發去旅行</h1>
 <p>台灣包車，自在出發。</p>
+<a class="hero-action" href="#trips"><span class="hero-action-label">探索精選行程</span><span aria-hidden="true">→</span></a>
 </div>
 </div>
     </section>
@@ -866,7 +867,7 @@ section#trips{margin-top:68px;padding:0 30px}
     const pageTranslations={
       'zh-Hant':{
         nav:['精選行程','車輛與服務','預約方式'],
-        hero:['帶著喜歡的人，出發去旅行','台灣包車，自在出發。'],
+        hero:['帶著喜歡的人，出發去旅行','台灣包車，自在出發。','探索精選行程'],
         trips:['精選行程','以下是適合包車旅遊的路線靈感。實際停留時間、順序與用餐安排，將依天候、交通、季節與旅客步調彈性調整。','手機可直接分享給親友'],
         service:['車輛與服務說明','依人數、行李、兒童座椅與路線需求，協助確認適合的車型與服務方式。'],
         booking:['預約方式','先說明您的日期與需求，再一起把路線安排得剛剛好。'],
@@ -875,7 +876,7 @@ section#trips{margin-top:68px;padding:0 30px}
       },
       'zh-Hans':{
         nav:['精选行程','车辆与服务','预约方式'],
-        hero:['带着喜欢的人，出发去旅行','台湾包车，自在出发。'],
+        hero:['带着喜欢的人，出发去旅行','台湾包车，自在出发。','探索精选行程'],
         trips:['精选行程','以下是适合包车旅游的路线灵感。实际停留时间、顺序与用餐安排，将依天气、交通、季节与旅客步调弹性调整。','手机可直接分享给亲友'],
         service:['车辆与服务说明','依人数、行李、儿童座椅与路线需求，协助确认适合的车型与服务方式。'],
         booking:['预约方式','先说明您的日期与需求，再一起把路线安排得刚刚好。'],
@@ -884,7 +885,7 @@ section#trips{margin-top:68px;padding:0 30px}
       },
       en:{
         nav:['Featured Tours','Vehicles & Services','Booking'],
-        hero:['Travel with the people you love','Private tours, at your pace.'],
+        hero:['Travel with the people you love','Private tours, at your pace.','Explore featured tours'],
         trips:['Featured Tours','Explore private-tour ideas across Taiwan. Stops, meals and timing remain flexible according to weather, traffic, season and your pace.','Easy to share on mobile'],
         service:['Vehicles & Services','We help confirm a suitable vehicle and service plan according to your group size, luggage, child seats and route.'],
         booking:['Booking','Tell us your dates and needs first, then we will shape the route together.'],
@@ -897,6 +898,7 @@ section#trips{margin-top:68px;padding:0 30px}
       const t=pageTranslations[language]||pageTranslations['zh-Hant'];
       document.querySelectorAll('.nav a').forEach((item,index)=>item.textContent=t.nav[index]);
       setText('.hero h1',t.hero[0]);setText('.hero p',t.hero[1]);
+      setText('.hero-action-label',t.hero[2]);
       setText('#trips .section-head h2',t.trips[0]);setText('#trips .section-head p',t.trips[1]);setText('#trips .section-head>p',t.trips[2]);
       setText('#service h2',t.service[0]);setText('#service .section-head p',t.service[1]);setText('#booking h2',t.booking[0]);setText('#booking .section-head p',t.booking[1]);setText('.faq h2',t.faq);setText('.footer h2',t.footer[0]);setText('.footer>p',t.footer[1]);
       const labels=document.querySelectorAll('#contact-form label');[0,2,3].forEach((index,i)=>{if(labels[index])labels[index].firstChild.nodeValue=t.form[i*2]});if(labels[1])labels[1].firstChild.nodeValue=t.form[2];if(labels[4])labels[4].firstChild.nodeValue=t.form[6];
